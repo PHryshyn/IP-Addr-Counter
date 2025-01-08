@@ -3,12 +3,16 @@ package main
 import (
 	"IP-Addr-Counter/counter"
 	"log"
+	"path/filepath"
 )
 
 func main() {
-	var fileName = "Enter the path to the file here"
 
-	var result, err = counter.ReadFileAncCalculateUniqueIds(fileName)
+	filePath := filepath.Join("PLEASE Enter Path to Folder", "ip_addresses.zip")
+
+	log.Println("File path:", filePath)
+
+	var result, err = counter.ReadFileAncCalculateUniqueIds(filePath)
 
 	if err != nil {
 		log.Fatal("ERROR: Error during processing:", err)

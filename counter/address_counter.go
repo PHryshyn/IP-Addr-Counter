@@ -47,6 +47,10 @@ func ReadFileAncCalculateUniqueIds(filePath string) (uint64, error) {
 				}
 				processor.ProcessIndex(uint64(ipIndex), storage)
 				processedLineCount++
+
+				if processedLineCount%100000000 == 0 {
+					log.Println("INFO: Processed lines: ", processedLineCount, " in file: ", file.Name)
+				}
 			}
 
 			if err := scanner.Err(); err != nil {
