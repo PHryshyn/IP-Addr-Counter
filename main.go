@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var fileName = "/Users/pavelhryshyn/Downloads/"
+	var fileName = "Enter the path to the file here"
 
 	var result, err = counter.ReadFileAncCalculateUniqueIds(fileName)
 
